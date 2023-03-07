@@ -26,7 +26,7 @@ const configuration = new Configuration({
 export const openai = new OpenAIApi(configuration);
 
 /* ROUTES */
-app.use("/openai", openAiRoutes);
+app.use("/api/openai", openAiRoutes);
 
 /* SERVER CONFIG */
 const PORT = process.env.PORT || 8000;
