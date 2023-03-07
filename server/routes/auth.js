@@ -1,9 +1,10 @@
 import express from "express";
 import axios from "axios";
+import { loginLimiter } from "../middleware/loginLimiter.js";
 
 const router = express.Router();
 
-router.post("/login", async (req, res) => {
+router.post("/login", loginLimiter, async (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -20,7 +21,7 @@ router.post("/login", async (req, res) => {
 
     res.status(200).json({ response: chatEngineResponse.data });
   } catch (error) {
-    console.error("\nERROR", error);
+    // console.error("\nERROR", error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -42,7 +43,7 @@ router.post("/signup", async (req, res) => {
 
     res.status(200).json({ response: chatEngineResponse.data });
   } catch (error) {
-    console.error("\nERROR", error.message);
+    // console.error("\nERROR", error.message);
     res.status(500).json({ error: error.message });
   }
 });

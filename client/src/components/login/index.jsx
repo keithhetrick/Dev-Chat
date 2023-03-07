@@ -9,8 +9,14 @@ const Login = ({ setUser, setSecret }) => {
   const [triggerLogin, resultLogin] = usePostLoginMutation();
   const [triggerSignUp] = usePostSignUpMutation();
 
+  const [errors, setErrors] = useState(null);
+
   const handleLogin = () => {
     triggerLogin({ username, password });
+
+    if (resultLogin.error) {
+      setErrors(resultLogin.error.data?.error);
+    }
   };
 
   const handleRegister = () => {
@@ -33,6 +39,12 @@ const Login = ({ setUser, setSecret }) => {
         <div style={{ alignSelf: "center" }}>
           <img src={logo} alt="logo" width="200" height="200" />
         </div>
+
+        {errors && (
+          <div className="error">
+            <p>{errors}</p>
+          </div>
+        )}
 
         {/* <h2 className="title">DEVChat APP</h2> */}
         <p
