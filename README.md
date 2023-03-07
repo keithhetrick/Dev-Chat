@@ -1,4 +1,4 @@
-# dev-messenger
+# Dev-Chat
 
 A simple messenger/chat app for developers. Full OpenAI integration to allow developers to test/tryout code with the new ChatGPT3.5-turbo verion, and share with other dvelopers in the community.
 
@@ -19,3 +19,13 @@ Built using:
 - [Morgan](https://www.npmjs.com/package/morgan)
 - [Helmet](https://www.npmjs.com/package/helmet)
 - [UUID](https://www.npmjs.com/package/uuid)
+
+## Installation
+
+Clone the repository and install the dependencies.
+
+```bash
+git clone
+cd dev-chat
+npm install
+```
