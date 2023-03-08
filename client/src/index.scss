@@ -550,3 +550,10 @@ body,
 ::-webkit-scrollbar-track:hover {
   background: $primary-700;
 }
+
+/* Screen Width Media Break @ 575px - keep chat in view - make it 50 vh */
+// @media (max-width: 575px) {
+//   .ce-chat-engine {
+//     height: 100vh !important;
+//   }
+// }

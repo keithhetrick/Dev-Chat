@@ -19,10 +19,10 @@ router.post("/login", loginLimiter, async (req, res) => {
       }
     );
 
-    res.status(200).json({ response: chatEngineResponse.data });
+    res.status(200).json({ success: true, response: chatEngineResponse.data });
   } catch (error) {
-    // console.error("\nERROR", error);
-    res.status(500).json({ error: error.message });
+    console.error("\nERROR", error.message);
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
@@ -41,10 +41,10 @@ router.post("/signup", async (req, res) => {
       }
     );
 
-    res.status(200).json({ response: chatEngineResponse.data });
+    res.status(200).json({ success: true, response: chatEngineResponse.data });
   } catch (error) {
-    // console.error("\nERROR", error.message);
-    res.status(500).json({ error: error.message });
+    console.error("\nERROR", error.message);
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 

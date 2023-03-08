@@ -45,10 +45,12 @@ router.post("/text", async (req, res) => {
       }
     );
 
-    res.status(200).json({ text: response.data.choices[0].message.content });
+    res
+      .status(200)
+      .json({ success: true, text: response.data.choices[0].message.content });
   } catch (error) {
     console.error("\nERROR", error.response.data.error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
@@ -80,10 +82,12 @@ router.post("/code", async (req, res) => {
       }
     );
 
-    res.status(200).json({ text: response.data.choices[0].message.content });
+    res
+      .status(200)
+      .json({ success: true, text: response.data.choices[0].message.content });
   } catch (error) {
     console.error("\nERROR", error.response.data.error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
@@ -103,10 +107,12 @@ router.post("/assist", async (req, res) => {
       ],
     });
 
-    res.status(200).json({ text: response.data.choices[0].message.content });
+    res
+      .status(200)
+      .json({ success: true, text: response.data.choices[0].message.content });
   } catch (error) {
     console.error("\nERROR", error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
