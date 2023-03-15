@@ -8,6 +8,8 @@ const App = () => {
   const [secret, setSecret] = useState(null);
   const isAuth = Boolean(user) && Boolean(secret);
 
+  // console.log("\nWidth: " + screen.width + ": Height: " + screen.height);
+
   return (
     <div className="app">
       <BrowserRouter>

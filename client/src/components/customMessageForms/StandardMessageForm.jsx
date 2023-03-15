@@ -9,8 +9,8 @@ const StandardMessageForm = ({ props, activeChat }) => {
 
   const handleSubmit = async () => {
     const date = new Date()
-      .toISOString()
-      // .toLocaleString("en-US", { timeZone: "America/Chicago" })
+      // .toISOString()
+      .toLocaleString("en-US", { timeZone: "America/Chicago" })
       .replace("T", " ")
       .replace("Z", `${Math.floor(Math.random() * 1000)}+00:00`);
     const attach = attachment
